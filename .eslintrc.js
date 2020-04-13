@@ -34,4 +34,13 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/state-in-constructor': 'off',
   },
+  overrides: [
+    {
+      'files': ['pages/_app.js', 'pages/_document.js'],
+      'rules': {
+        'react/jsx-props-no-spreading': 'off',
+        'react/react-in-jsx-scope': 'off',
+      }
+    }
+  ]
 };
