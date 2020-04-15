@@ -1,5 +1,12 @@
 import React from 'react';
 
-const pages = () => <h1>Hello</h1>;
+import { Head } from '../components/Page';
+
+const pages = () => (
+  <>
+    <Head />
+    <h1>Hello</h1>
+  </>
+);
 
 export default pages;
