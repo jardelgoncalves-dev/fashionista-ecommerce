@@ -33,6 +33,7 @@ module.exports = {
     ],
     'import/prefer-default-export': 'off',
     'react/state-in-constructor': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
   overrides: [
     {
@@ -40,6 +41,12 @@ module.exports = {
       'rules': {
         'react/jsx-props-no-spreading': 'off',
         'react/react-in-jsx-scope': 'off',
+      }
+    },
+    {
+      'files': ['components/**/*.stories.js'],
+      'rules': {
+        'import/no-extraneous-dependencies': 'off',
       }
     }
   ]
