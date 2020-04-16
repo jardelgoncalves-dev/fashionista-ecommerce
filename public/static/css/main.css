@@ -1,9 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+
 
 :root {
   --light-gray: #F9F9F9;
+  --black: #212429;
 }
 
 body {
   background-color: var(--light-gray);
+  color: var(--black);
+  font-size: 10px;
+	font-family: "Montserrat", sans-serif;
 }
