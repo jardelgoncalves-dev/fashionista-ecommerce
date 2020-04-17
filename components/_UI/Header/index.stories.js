@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import '../../../public/static/css/main.css';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, number } from '@storybook/addon-knobs';
 
 import Header from '.';
 
@@ -18,4 +18,4 @@ storiesOf('UI|Button/Header', module)
       {story()}
     </div>
   ))
-  .add('default', () => <Header />);
+  .add('default', () => <Header productInCart={number('productInCart', 0)} />);
