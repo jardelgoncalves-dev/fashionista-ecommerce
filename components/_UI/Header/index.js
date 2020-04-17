@@ -13,6 +13,11 @@ const Header = ({ onSearch, onShoppingCart, productInCart }) => {
       <ul className="header__menu">
         <li>
           <button type="button" onClick={onSearch}>
+            <i className="fa fa-home" />
+          </button>
+        </li>
+        <li>
+          <button type="button" onClick={onSearch}>
             <i className="fa fa-search" />
           </button>
         </li>

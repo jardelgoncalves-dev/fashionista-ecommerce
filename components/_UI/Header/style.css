@@ -1,5 +1,6 @@
 .header {
   height: 60px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9,7 +10,9 @@
   -webkit-box-shadow: 0px 10px 13px -10px rgba(0,0,0,0.11);
   -moz-box-shadow: 0px 10px 13px -10px rgba(0,0,0,0.11);
   box-shadow: 0px 10px 13px -10px rgba(0,0,0,0.11);
-  transition: all 0.5s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .logo img{
@@ -32,13 +35,13 @@
   font-size: 18px;
   padding: 10px 15px;
   border-radius: 10px;
-  transition: all 0.5s ease-in-out;
   position: relative;
+  margin-left: 10px;
 }
 
 .header__menu li button .badges {
-  height: 9px;
-  width: 9px;
+  height: 13px;
+  width: 13px;
   font-size: 9px;
   padding: 2px 2px;
   background-color: #f24949;
@@ -54,7 +57,6 @@
   right: 0;
   bottom: 0;
   margin: auto auto;
-
 }
 
 .header__menu li button:hover {
@@ -64,7 +66,6 @@
 @media only screen and (max-width: 900px) {
   .header {
     padding: 0 30px;
-    transition: all 0.5s ease-in-out;
   }
   .logo img{
     width: 153px;
@@ -73,9 +74,41 @@
 
   }
   .header__menu li button {
-    font-size: 16px;
+    padding: 10px 10px;
+    margin-left: 10px;
+  }
+}
+
+
+@media only screen and (max-width: 620px) {
+  .header {
+    display: flex;
+    justify-content: center;
+  }
+  .logo img{
+    width: 153px;
+    height: 22px;
+    transition: all 0.5s ease-in-out;
+  }
+  .header__menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    -webkit-box-shadow: 0px -23px 11px -21px rgba(0,0,0,0.07);
+    -moz-box-shadow: 0px -23px 11px -21px rgba(0,0,0,0.07);
+    box-shadow: 0px -23px 11px -21px rgba(0,0,0,0.07);
+  }
+  .header__menu li button {
     padding: 10px 10px;
     margin-left: 5px;
     transition: all 0.5s ease-in-out;
   }
+
 }
