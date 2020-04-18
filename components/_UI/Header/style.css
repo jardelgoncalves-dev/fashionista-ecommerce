@@ -108,7 +108,6 @@
   .header__menu li button {
     padding: 10px 10px;
     margin-left: 5px;
-    transition: all 0.5s ease-in-out;
   }
 
 }
