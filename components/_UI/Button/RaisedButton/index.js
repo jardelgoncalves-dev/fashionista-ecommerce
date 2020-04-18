@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FaCircleNotch } from 'react-icons/fa';
 
 import './style.css';
 
@@ -11,7 +12,7 @@ const RaisedButton = ({ text, className, disabled, loading, ...restProps }) => {
       type="button"
       className={`button ${className}`}
     >
-      {text} {loading && <i className="fa fa-spinner" />}
+      {text} {loading && <FaCircleNotch className="fa-spinner" />}
     </button>
   );
 };
