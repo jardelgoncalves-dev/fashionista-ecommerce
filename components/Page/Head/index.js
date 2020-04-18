@@ -17,7 +17,6 @@ const Head = () => (
       content="E-commerce, ecommerce, moda, moda feminina, acessórios, acessorios, mobile"
     />
     <link rel="stylesheet" href="/public/static/css/normalize.css" />
-    <link rel="stylesheet" href="/public/static/css/fontawesome.min.css" />
     <link rel="stylesheet" href="/public/static/css/main.css" />
   </NextHead>
 );
