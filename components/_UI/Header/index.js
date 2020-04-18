@@ -1,29 +1,37 @@
 import React from 'react';
+import Link from 'next/link';
+import { FiShoppingBag, FiHome, FiSearch } from 'react-icons/fi';
 import PropTypes from 'prop-types';
 
 import './style.css';
 import logo from '../../../public/static/images/fashionista_logo.png';
 
-const Header = ({ onSearch, onShoppingCart, productInCart }) => {
+const Header = ({ homePath, onSearch, onShoppingCart, productInCart }) => {
   return (
     <header className="header">
-      <div className="logo">
-        <img src={logo} alt="Logo" />
-      </div>
+      <Link href="/">
+        <a className="logo">
+          <img src={logo} alt="Logo" />
+        </a>
+      </Link>
       <ul className="header__menu">
         <li>
-          <button type="button" onClick={onSearch}>
-            <i className="fa fa-home" />
-          </button>
+          <div className="header__link">
+            <Link href={homePath}>
+              <a>
+                <FiHome />
+              </a>
+            </Link>
+          </div>
         </li>
         <li>
           <button type="button" onClick={onSearch}>
-            <i className="fa fa-search" />
+            <FiSearch />
           </button>
         </li>
         <li>
           <button type="button" onClick={onShoppingCart}>
-            <i className="fa fa-shopping-bag" />
+            <FiShoppingBag />
             {Boolean(productInCart) && (
               <div className="badges">{productInCart}</div>
             )}
@@ -35,12 +43,14 @@ const Header = ({ onSearch, onShoppingCart, productInCart }) => {
 };
 
 Header.propTypes = {
+  homePath: PropTypes.string,
   onSearch: PropTypes.func,
   onShoppingCart: PropTypes.func,
   productInCart: PropTypes.number,
 };
 
 Header.defaultProps = {
+  homePath: '/',
   onSearch: () => null,
   onShoppingCart: () => null,
   productInCart: 0,

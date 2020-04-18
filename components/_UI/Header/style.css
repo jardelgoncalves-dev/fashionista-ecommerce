@@ -15,10 +15,14 @@
   left: 0;
 }
 
-.logo img{
+.logo img {
   width: 204px;
   height: 30px;
   transition: all 0.5s ease-in-out;
+}
+
+.logo p {
+  display: flex;
 }
 
 .header__menu {
@@ -27,7 +31,7 @@
   flex-direction: row;
 }
 
-
+.header__menu li .header__link,
 .header__menu li button {
   background-color: transparent;
   cursor: pointer;
@@ -39,9 +43,14 @@
   margin-left: 10px;
 }
 
+.header__menu li .header__link a,
+.header__menu li button {
+  color: var(--black);
+}
+
 .header__menu li button .badges {
-  height: 13px;
-  width: 13px;
+  height: 15px;
+  width: 15px;
   font-size: 9px;
   padding: 2px 2px;
   background-color: #f24949;
@@ -55,10 +64,10 @@
   top: 0;
   left: 12px;
   right: 0;
-  bottom: 0;
+  bottom: 12px;
   margin: auto auto;
 }
-
+.header__menu li .header__link:hover,
 .header__menu li button:hover {
   background-color: #2124291a;
 }
@@ -73,6 +82,7 @@
     transition: all 0.5s ease-in-out;
 
   }
+  .header__menu li .header__link,
   .header__menu li button {
     padding: 10px 10px;
     margin-left: 10px;
@@ -105,8 +115,9 @@
     -moz-box-shadow: 0px -23px 11px -21px rgba(0,0,0,0.07);
     box-shadow: 0px -23px 11px -21px rgba(0,0,0,0.07);
   }
+  .header__menu li .header__link,
   .header__menu li button {
-    padding: 10px 10px;
+    padding: 10px 20px;
     margin-left: 5px;
   }
 
