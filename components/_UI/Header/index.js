@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { FiShoppingBag, FiHome, FiSearch } from 'react-icons/fi';
 import PropTypes from 'prop-types';
 
-import './style.css';
 import logo from '../../../public/static/images/fashionista_logo.png';
 
 const Header = ({ homePath, onSearch, onShoppingCart, productInCart }) => {

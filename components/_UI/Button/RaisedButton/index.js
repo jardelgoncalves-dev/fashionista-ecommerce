@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FaCircleNotch } from 'react-icons/fa';
 
-import './style.css';
-
 const RaisedButton = ({ text, className, disabled, loading, ...restProps }) => {
   return (
     <button
