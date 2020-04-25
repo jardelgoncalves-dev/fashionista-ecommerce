@@ -19,6 +19,7 @@ const ListSize = ({ options, selected, onClick }) => {
                 <input
                   type="radio"
                   checked={op.available && op.sku === select.sku}
+                  disabled={!op.available}
                   onClick={() => {
                     if (op.available) {
                       onSelect(op);
