@@ -9,11 +9,13 @@ const Products = ({ data = [] }) => {
       <ul className="row">
         {data &&
           data.map((product) => (
-            <li className="product">
+            <li className="product__item">
               <Link href={product.path}>
                 <a className="product__wrap">
-                  {Boolean(product.promo) && (
-                    <span className="product__promo">{product.promo}%</span>
+                  {Boolean(product.discount_percentage) && (
+                    <span className="product__promo">
+                      {product.discount_percentage}
+                    </span>
                   )}
                   <figcaption className="product__image">
                     <img
@@ -25,7 +27,9 @@ const Products = ({ data = [] }) => {
 
                   <div className="product__details">
                     <h4 className="details__name">{product.name}</h4>
-                    <span className="details__price">{product.price}</span>
+                    <span className="details__price">
+                      {product.actual_price}
+                    </span>
                   </div>
                 </a>
               </Link>
@@ -39,10 +43,9 @@ const Products = ({ data = [] }) => {
 Products.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      _id: PropTypes.string,
       name: PropTypes.string,
-      price: PropTypes.string,
-      promo: PropTypes.number,
+      actual_price: PropTypes.string,
+      discount_percentage: PropTypes.string,
       path: PropTypes.string,
       image: PropTypes.string,
     })
