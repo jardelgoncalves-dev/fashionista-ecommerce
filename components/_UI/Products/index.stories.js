@@ -9,15 +9,15 @@ import Products from '.';
 const data = [
   {
     name: 'Blusa Red Stripes',
-    price: 'R$ 149,90',
+    actual_price: 'R$ 149,90',
     image:
       'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ4HZsF8oNnV0KcrmM6Fv7oJ3usRcFxPMCrkqr-fkKLW09rPS0&usqp=CAY',
-    promo: 20,
+    discount_percentage: '20%',
     path: '/',
   },
 ];
 
-storiesOf('UI|Button/Product', module)
+storiesOf('UI|Products/Products', module)
   .addDecorator(withKnobs)
   .addDecorator((story) => (
     <div

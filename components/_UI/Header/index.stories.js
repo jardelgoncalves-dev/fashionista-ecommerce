@@ -6,7 +6,7 @@ import { withKnobs, number } from '@storybook/addon-knobs';
 
 import Header from '.';
 
-storiesOf('UI|Button/Header', module)
+storiesOf('UI|Header/Header', module)
   .addDecorator(withKnobs)
   .addDecorator((story) => (
     <div
