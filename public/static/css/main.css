@@ -372,6 +372,7 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-items: c20enter;
   height: 40px;
   width: 40px;
   border-radius: 8px;
@@ -587,6 +588,7 @@ h6 {
   align-items: center;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .drawer__header .drawer__header__title {
@@ -618,4 +620,221 @@ h6 {
 @keyframes slide-out {
   0% { transform: translateX(0%); }
     100% { transform: translateX(100%); }
+}
+
+/* Bag */
+.bag {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 48px;
+}
+
+.bag .bag__total__amount {
+  height: 60px;
+  width: 100%;
+  background-color: #212429;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #fff;
+  padding: 0 16px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.bag--empty,
+.bag__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0 10px;
+  flex:1;
+}
+
+.bag__list {
+  overflow-y: scroll;
+  list-style: none;
+}
+
+.bag--empty {
+  justify-content: center;
+  align-items: center;
+}
+
+.bag__empty span {
+  font-size: 15px;
+  color: #7a7a7a;
+}
+
+.bag--empty svg {
+  font-size: 40px;
+  color: #7a7a7a;
+}
+
+.bag__list .bag__list__item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-bottom:  1px solid #ddd;
+  padding: 20px 0;
+}
+
+.bag__list .bag__list__item:last-child {
+  border-bottom:  none;
+  padding: 20px 0;
+}
+
+.bag__list .bag__list__item .bag__item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.bag__list__item .bag__item .bag__item_product {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.bag__list__item .bag__item .bag__item_product figcaption {
+  width: 100px;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bag__list__item .bag__item .bag__item_product figcaption {
+  transition: all 0.3s ease-in-out;
+}
+
+.bag__list__item .bag__item .bag__item_product img {
+  width: 100%;
+  height: auto;
+}
+
+.bag__list__item .bag__item .bag__item_product .bag__item__price,
+.bag__list__item .bag__item .bag__item_product .bag__item__col {
+  display: flex;
+  flex-direction: column;
+}
+
+.bag__item__col {
+  margin-left: 12px;
+}
+
+.bag__item__col .bag__counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.bag__counter button {
+  height: 28px;
+  width: 28px;
+  border: 1px solid #212429;
+  background-color: transparent;
+  color: #212429;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.bag__counter h1 {
+  font-size: 17px;
+  font-weight: 400;
+  color: #212429;
+}
+
+.bag__counter button:hover {
+  background-color: #212429;
+  color: #ffffff;
+}
+
+.bag__counter button:first-child {
+  margin-right: 12px;
+}
+
+.bag__counter button:last-child {
+  margin-left: 12px;
+}
+
+.bag__item__price {
+  min-width: 80px;
+  margin-left: 20px;
+}
+
+.bag__item .bag__item__price h3,
+.bag__item_product .bag__item__col h3 {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.bag__item .bag__item__price h4,
+.bag__item_product .bag__item__col span {
+  font-size: 12px;
+  font-weight: 400;
+  color: #a7a7a7;
+}
+
+.bag__item_product .bag__item__col span {
+  margin-top: 8px;
+}
+
+.bag__list__item .bag__remove {
+  width: 200px;
+  background-color: transparent;
+  border: none;
+  margin-top: 16px;
+  color: #f24949;
+  cursor: pointer;
+}
+
+
+@media only screen and (max-width: 700px) {
+  .bag__list__item .bag__item .bag__item_product figcaption {
+    width: 200px;
+  }
+
+  .bag__item .bag__item__price h3,
+  .bag__item_product .bag__item__col h3 {
+    font-size: 12px;
+  }
+
+  .bag__item .bag__item__price h4,
+  .bag__item_product .bag__item__col span {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .bag__list__item .bag__item .bag__item_product figcaption {
+    width: 100px;
+  }
+
+  .bag__item .bag__item__price h3,
+  .bag__item_product .bag__item__col h3 {
+    font-size: 12px;
+  }
+
+  .bag__item .bag__item__price h4,
+  .bag__item_product .bag__item__col span {
+    font-size: 12px;
+  }
+
+  .bag .bag__total__amount {
+    font-size: 15px;
+  }
 }
