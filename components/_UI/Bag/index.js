@@ -54,7 +54,9 @@ const Bag = ({
         </ul>
       ) : (
         <div className="bag__empty">
-          <FiShoppingCart />
+          <div className="circle__cart">
+            <FiShoppingCart />
+          </div>
           <span>Sua sacola está vazia :/</span>
         </div>
       )}

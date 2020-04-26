@@ -646,7 +646,7 @@ h6 {
   font-weight: 600;
 }
 
-.bag--empty,
+.bag__empty,
 .bag__list {
   display: flex;
   flex-direction: column;
@@ -660,7 +660,7 @@ h6 {
   list-style: none;
 }
 
-.bag--empty {
+.bag__empty {
   justify-content: center;
   align-items: center;
 }
@@ -670,8 +670,17 @@ h6 {
   color: #7a7a7a;
 }
 
-.bag--empty svg {
-  font-size: 40px;
+.bag__empty .circle__cart {
+  padding: 30px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bag__empty svg {
+  font-size: 30px;
   color: #7a7a7a;
 }
 
