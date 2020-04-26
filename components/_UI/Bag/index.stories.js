@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import '../../../public/static/css/main.css';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 
 import Bag from '.';
 import Drawer from '../Drawer';
@@ -35,6 +35,10 @@ storiesOf('UI|Bag/Bag', module)
   ))
   .add('default', () => (
     <Drawer visible title="Sacola">
-      <Bag data={data} total="R$ 149,90" />
+      <Bag
+        data={data}
+        total="R$ 149,90"
+        isSearch={boolean('isSearch', false)}
+      />
     </Drawer>
   ));

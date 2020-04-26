@@ -37,6 +37,10 @@ h6 {
   font-family: 'Noto Sans SC', sans-serif;
 }
 
+::placeholder {
+  color: #dfdfdf;
+}
+
 
 /* Header */
 .header {
@@ -632,6 +636,43 @@ h6 {
   padding-bottom: 48px;
 }
 
+.bag.bag--searchMode .bag__search {
+  display: flex;
+}
+
+.bag.bag--searchMode .bag__remove,
+.bag.bag--searchMode .bag__counter,
+.bag.bag--searchMode .bag__item__col span,
+.bag.bag--searchMode .bag__total__amount {
+  display: none;
+}
+
+.bag.bag--searchMode .bag__list__item {
+  cursor: pointer;
+}
+
+.bag .bag__search {
+  display: none;
+  height: 60px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  background-color: #F9F9F9;
+  -webkit-box-shadow: 0px 10px 30px -20px rgba(0,0,0,0.23);
+  -moz-box-shadow: 0px 10px 30px -20px rgba(0,0,0,0.23);
+  box-shadow: 0px 10px 30px -20px rgba(0,0,0,0.23);
+}
+
+.bag .bag__search input{
+  height: 36px;
+  border-radius: 4px;
+  border: 1px solid #7a7a7a;
+  width: 100%;
+  padding: 0 8px;
+  font-weight: 600;
+}
+
 .bag .bag__total__amount {
   height: 60px;
   width: 100%;
@@ -656,7 +697,7 @@ h6 {
 }
 
 .bag__list {
-  overflow-y: scroll;
+  overflow-y: auto;
   list-style: none;
 }
 
@@ -713,7 +754,7 @@ h6 {
 }
 
 .bag__list__item .bag__item .bag__item_product figcaption {
-  width: 100px;
+  width: 80px;
   height: auto;
   position: relative;
   display: flex;
@@ -787,13 +828,17 @@ h6 {
 
 .bag__item .bag__item__price h3,
 .bag__item_product .bag__item__col h3 {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
+}
+
+.bag__item_product .bag__item__col h3 {
+  text-transform: uppercase;
 }
 
 .bag__item .bag__item__price h4,
 .bag__item_product .bag__item__col span {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
   color: #a7a7a7;
 }
@@ -819,28 +864,28 @@ h6 {
 
   .bag__item .bag__item__price h3,
   .bag__item_product .bag__item__col h3 {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .bag__item .bag__item__price h4,
   .bag__item_product .bag__item__col span {
-    font-size: 12px;
+    font-size: 16px;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .bag__list__item .bag__item .bag__item_product figcaption {
-    width: 100px;
+    width: 80px;
   }
 
   .bag__item .bag__item__price h3,
   .bag__item_product .bag__item__col h3 {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .bag__item .bag__item__price h4,
   .bag__item_product .bag__item__col span {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .bag .bag__total__amount {

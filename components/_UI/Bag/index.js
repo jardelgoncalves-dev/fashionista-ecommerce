@@ -1,16 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FiPlus, FiMinus, FiShoppingCart } from 'react-icons/fi';
+import { DebounceInput } from 'react-debounce-input';
+import PropTypes from 'prop-types';
 
 const Bag = ({
   data = [],
   total = 'R$ 0,00',
+  isSearch,
   onMinusProduct,
   onPlusProduct,
   onRemoveProduct,
+  onSearch,
 }) => {
   return (
-    <div className="bag">
+    <div className={`bag ${isSearch ? 'bag--searchMode' : ''}`}>
+      <div className="bag__search">
+        <DebounceInput
+          minLength={2}
+          debounceTimeout={300}
+          onChange={onSearch}
+          placeholder="Buscar por produto"
+        />
+      </div>
       {data.length ? (
         <ul className="bag__list">
           {data.map((prod) => (
@@ -57,7 +68,10 @@ const Bag = ({
           <div className="circle__cart">
             <FiShoppingCart />
           </div>
-          <span>Sua sacola está vazia :/</span>
+          <span>
+            {isSearch ? 'Nenhum produto encontrado' : 'Sua sacola está vazia'}{' '}
+            :/
+          </span>
         </div>
       )}
       <div className="bag__total__amount">Subtotal - {total}</div>
@@ -77,17 +91,21 @@ Bag.propTypes = {
     })
   ),
   total: PropTypes.string,
+  isSearch: PropTypes.bool,
   onMinusProduct: PropTypes.func,
   onPlusProduct: PropTypes.func,
   onRemoveProduct: PropTypes.func,
+  onSearch: PropTypes.func,
 };
 
 Bag.defaultProps = {
   data: [],
   total: 'R$ 0,00',
+  isSearch: false,
   onMinusProduct: () => null,
   onPlusProduct: () => null,
   onRemoveProduct: () => null,
+  onSearch: () => null,
 };
 
 export default Bag;
