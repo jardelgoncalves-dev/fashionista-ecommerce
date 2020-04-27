@@ -11,6 +11,7 @@ const Bag = ({
   onPlusProduct,
   onRemoveProduct,
   onSearch,
+  toProductPage,
 }) => {
   return (
     <div className={`bag ${isSearch ? 'bag--searchMode' : ''}`}>
@@ -26,7 +27,14 @@ const Bag = ({
         <ul className="bag__list">
           {data.map((prod) => (
             <li className="bag__list__item" key={prod.name}>
-              <div className="bag__item">
+              <div
+                className="bag__item"
+                onClick={() => {
+                  if (isSearch) {
+                    toProductPage(prod);
+                  }
+                }}
+              >
                 <div className="bag__item_product">
                   <figcaption>
                     <img src={prod.image} alt={prod.name} />
@@ -96,6 +104,7 @@ Bag.propTypes = {
   onPlusProduct: PropTypes.func,
   onRemoveProduct: PropTypes.func,
   onSearch: PropTypes.func,
+  toProductPage: PropTypes.func,
 };
 
 Bag.defaultProps = {
@@ -106,6 +115,7 @@ Bag.defaultProps = {
   onPlusProduct: () => null,
   onRemoveProduct: () => null,
   onSearch: () => null,
+  toProductPage: () => null,
 };
 
 export default Bag;
