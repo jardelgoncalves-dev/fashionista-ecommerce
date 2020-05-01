@@ -51,7 +51,6 @@ h6 {
 .container {
   width: 100%;
   max-width: 1150px;
-  height: 2000px;
 }
 
 /* Header */
@@ -70,6 +69,7 @@ h6 {
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 
 .logo img {
@@ -247,6 +247,11 @@ h6 {
   box-sizing: border-box;
 }
 
+.products__count {
+  font-size: 14px;
+  color: #a7a7a7;
+}
+
 .row {
   width: 100%;
   box-sizing: border-box;
@@ -339,6 +344,10 @@ h6 {
   .row {
     padding: 0 40px;
   }
+  .products__count {
+    margin-left: 8px;
+
+  }
 }
 
 
@@ -348,6 +357,7 @@ h6 {
     flex-basis: 33%;
     max-width: 33%;
   }
+
 }
 
 @media only screen and (min-width: 1140px) {
