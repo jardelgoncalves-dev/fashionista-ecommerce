@@ -6,10 +6,15 @@ import PropTypes from 'prop-types';
 const Products = ({ data = [] }) => {
   return (
     <div className="products__container">
+      <div className="row">
+        <span className="products__count">
+          {data.length} item{data.length > 1 ? 's' : ''}
+        </span>
+      </div>
       <ul className="row">
         {data &&
           data.map((product) => (
-            <li className="product__item">
+            <li className="product__item" key={product.name}>
               <Link href={product.path}>
                 <a className="product__wrap">
                   {Boolean(product.discount_percentage) && (
