@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "next": "^9.3.4",
+    "next-images": "^1.4.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-debounce-input": "^3.2.2",
