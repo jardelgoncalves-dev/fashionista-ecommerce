@@ -3,6 +3,8 @@ import Link from 'next/link';
 
 import PropTypes from 'prop-types';
 
+import { productNameToId } from '../../../utils';
+
 const Products = ({ data = [] }) => {
   return (
     <div className="products__container">
@@ -14,18 +16,25 @@ const Products = ({ data = [] }) => {
       <ul className="row">
         {data &&
           data.map((product) => (
-            <li className="product__item" key={product.name}>
-              <Link href={product.path}>
+            <li className="product__item" key={product.name + product.color}>
+              <Link
+                href={`/product/${productNameToId(
+                  `${product.name} ${product.color}`
+                )}`}
+              >
                 <a className="product__wrap">
-                  {Boolean(product.discount_percentage) && (
+                  {product.on_sale && (
                     <span className="product__promo">
-                      {product.discount_percentage}
+                      -{product.discount_percentage}
                     </span>
                   )}
                   <figcaption className="product__image">
                     <img
                       className="product__image"
-                      src={product.image}
+                      src={
+                        product.image ||
+                        'https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível'
+                      }
                       alt={product.name}
                     />
                   </figcaption>
@@ -49,9 +58,10 @@ Products.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
+      color: PropTypes.string,
+      on_sale: PropTypes.bool,
       actual_price: PropTypes.string,
       discount_percentage: PropTypes.string,
-      path: PropTypes.string,
       image: PropTypes.string,
     })
   ),
