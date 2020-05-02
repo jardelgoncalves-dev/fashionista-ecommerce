@@ -288,9 +288,9 @@ h6 {
 
 .product__item .product__promo {
   position: absolute;
-  padding: 3px 8px;
+  padding: 3px 5px;
   background-color: #212429;
-  font-size: 10px;
+  font-size: 11px;
   color: #ffffff;
   top: 0;
   right: 0;
@@ -299,7 +299,9 @@ h6 {
 
 .product__item .product__image {
   height: auto;
-	width: 100%;
+  width: 100%;
+  min-height: 300px;
+  background-color: #fff;
 	margin: 0;
   position: relative;
   overflow: hidden;
@@ -332,7 +334,7 @@ h6 {
 
 @media only screen and (min-width: 600px) {
   .product__item {
-    padding: 10px;
+    padding: 5px;
     flex-basis: 50%;
     max-width: 50%;
   }
@@ -343,7 +345,7 @@ h6 {
 
 @media only screen and (min-width: 700px) {
   .product__item {
-    padding: 20px;
+    padding: 5px;
     flex-basis: 50%;
     max-width: 50%;
   }
@@ -359,7 +361,7 @@ h6 {
 
 @media only screen and (min-width: 920px) {
   .product__item {
-    padding: 8px;
+    padding: 5px;
     flex-basis: 33%;
     max-width: 33%;
   }
@@ -922,98 +924,50 @@ h6 {
 }
 
 .loading__container {
-  width:120px;
-  height:60px;
-  position: absolute;
-  left:50%;
-  top:50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
-
-.loading__container--small {
+.loading {
+  display: inline-block;
+  position: relative;
   width: 80px;
-  height: 30px;
+  height: 80px;
 }
 
-.loading__container--small .loading__circle {
-  width: 8px;
-  height: 8px;
-}
-.loading__container--small .loading__shadow {
-  width: 8px;
-}
-
-.loading__circle {
-  width:12px;
-  height:12px;
+.loading div {
+  box-sizing: border-box;
+  display: block;
   position: absolute;
+  width: 48px;
+  height: 48px;
+  margin: 8px;
+  border: 6px solid #212429;
   border-radius: 50%;
-  background-color: #212429;
-  left:15%;
-  transform-origin: 50%;
-  animation: circle .5s alternate infinite ease;
+  animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #212429 transparent transparent transparent;
 }
 
-@keyframes circle{
-  0%{
-      top:60px;
-      height:5px;
-      border-radius: 50px 50px 25px 25px;
-      transform: scaleX(1.7);
-  }
-  40%{
-      height:20px;
-      border-radius: 50%;
-      transform: scaleX(1);
-  }
-  100%{
-      top:0%;
-  }
+.loading div:nth-child(1) {
+  animation-delay: -0.45s;
 }
 
-.loading__circle:nth-child(2){
-  left:45%;
-  animation-delay: .2s;
-}
-.loading__circle:nth-child(3){
-  left:auto;
-  right:15%;
-  animation-delay: .3s;
+.loading div:nth-child(2) {
+  animation-delay: -0.3s;
 }
 
-.loading__shadow {
-  width:12px;
-  height:4px;
-  border-radius: 50%;
-  background-color: rgba(0,0,0,.5);
-  position: absolute;
-  top:62px;
-  transform-origin: 50%;
-  z-index: -1;
-  left:15%;
-  filter: blur(1px);
-  animation: shadow .5s alternate infinite ease;
+.loading div:nth-child(3) {
+  animation-delay: -0.15s;
 }
 
-@keyframes shadow{
-  0%{
-      transform: scaleX(1.5);
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  40%{
-      transform: scaleX(1);
-      opacity: .7;
+  100% {
+    transform: rotate(360deg);
   }
-  100%{
-      transform: scaleX(.2);
-      opacity: .4;
-  }
-}
-.loading__shadow:nth-child(4){
-  left: 45%;
-  animation-delay: .2s
-}
-.loading__shadow:nth-child(5){
-  left:auto;
-  right:15%;
-  animation-delay: .3s;
 }

@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 const Loading = ({ className }) => {
   return (
     <div className={`loading__container ${className}`}>
-      <div className="loading__circle" />
-      <div className="loading__circle" />
-      <div className="loading__circle" />
-      <div className="loading__shadow" />
-      <div className="loading__shadow" />
-      <div className="loading__shadow" />
+      <div className="loading">
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
     </div>
   );
 };
