@@ -2,12 +2,14 @@ import App from 'next/app';
 import Router from 'next/router';
 import React from 'react';
 import { Provider, connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import withRedux from 'next-redux-wrapper';
 
 import { Head, Layout } from '../components/Page';
 import { Header, Drawer, Bag } from '../components/_UI';
 
 import store from '../store';
+import * as CartAction from '../store/actions/cart';
 
 class MyApp extends App {
   state = {
@@ -64,6 +66,21 @@ class MyApp extends App {
     Router.push(`/product/${id}`);
   };
 
+  onRemoveProductToCart = ({ id }) => {
+    const { removeProductToCart } = this.props;
+    removeProductToCart(id);
+  };
+
+  onIncrementProduct = ({ id, amount }) => {
+    const { updateAmount } = this.props;
+    updateAmount(id, Number(amount) + 1);
+  };
+
+  onDecrementProduct = ({ id, amount }) => {
+    const { updateAmount } = this.props;
+    updateAmount(id, Number(amount) - 1);
+  };
+
   render() {
     const { Component, pageProps, cart } = this.props;
 
@@ -92,6 +109,9 @@ class MyApp extends App {
             isSearch={this.state.typeModal === 'search'}
             onSearch={this.onSearch}
             toProductPage={this.goToProductPage}
+            onRemoveToCart={this.onRemoveProductToCart}
+            onIncrement={this.onIncrementProduct}
+            onDecrement={this.onDecrementProduct}
             data={
               this.state.typeModal === 'cart' ? cart : this.state.productsSearch
             }
@@ -104,9 +124,14 @@ class MyApp extends App {
 
 const makeStore = () => store;
 
+const mapStateToProps = (state) => ({
+  cart: state.cart,
+  products: state.product,
+});
+
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(CartAction, dispatch);
+
 export default withRedux(makeStore)(
-  connect((state) => ({
-    cart: state.cart,
-    products: state.product,
-  }))(MyApp)
+  connect(mapStateToProps, mapDispatchToProps)(MyApp)
 );

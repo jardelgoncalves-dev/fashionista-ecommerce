@@ -34,7 +34,7 @@ export default (state = [], action) => {
         }
       });
     case UPDATE_AMOUNT_PRODUCT: {
-      if (action <= 0) {
+      if (action.amount <= 0) {
         return state;
       }
 
