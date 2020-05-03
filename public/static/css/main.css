@@ -886,9 +886,10 @@ h6 {
 
 .bag__list__item .bag__remove {
   width: 200px;
+  font-size: 14px;
   background-color: transparent;
   border: none;
-  margin-top: 16px;
+  margin-top: 12px;
   color: #f24949;
   cursor: pointer;
 }
