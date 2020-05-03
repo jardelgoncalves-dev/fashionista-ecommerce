@@ -10,8 +10,8 @@ import store from '../store';
 
 class MyApp extends App {
   state = {
-    modalVisible: false,
     typeModal: '',
+    modalClassName: '',
   };
 
   static async getInitialProps({ Component, ctx }) {
@@ -24,22 +24,21 @@ class MyApp extends App {
 
   onModalShoppingCart = () => {
     this.setState({
-      modalVisible: true,
       typeModal: 'cart',
+      modalClassName: 'drawer--visible',
     });
   };
 
   onModalSearch = () => {
     this.setState({
-      modalVisible: true,
       typeModal: 'search',
+      modalClassName: 'drawer--visible',
     });
   };
 
   onModalClose = () => {
     this.setState({
-      modalVisible: false,
-      typeModal: '',
+      modalClassName: 'drawer--closed',
     });
   };
 
@@ -59,7 +58,7 @@ class MyApp extends App {
           <Component {...pageProps} />
         </Layout>
         <Drawer
-          visible={this.state.modalVisible}
+          className={this.state.modalClassName}
           title={
             this.state.typeModal === 'cart'
               ? `Sacola (${cartSize})`
