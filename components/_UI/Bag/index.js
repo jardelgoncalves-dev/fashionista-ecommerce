@@ -3,11 +3,10 @@ import { FiPlus, FiMinus, FiShoppingCart } from 'react-icons/fi';
 import { DebounceInput } from 'react-debounce-input';
 import PropTypes from 'prop-types';
 
-import { productNameToId } from '../../../utils';
+import { productNameToId, BRLPriceToNumber, formatPrice } from '../../../utils';
 
 const Bag = ({
   data = [],
-  total = 'R$ 0,00',
   isSearch,
   searchValue,
   onDecrement,
@@ -88,7 +87,15 @@ const Bag = ({
           </span>
         </div>
       )}
-      <div className="bag__total__amount">Subtotal - {total}</div>
+      <div className="bag__total__amount">
+        Subtotal -{' '}
+        {formatPrice(
+          data.reduce(
+            (acc, p) => acc + p.amount * BRLPriceToNumber(p.actual_price),
+            0
+          )
+        )}
+      </div>
     </div>
   );
 };
@@ -115,7 +122,6 @@ Bag.propTypes = {
       installments: PropTypes.string,
     })
   ),
-  total: PropTypes.string,
   searchValue: PropTypes.string,
   isSearch: PropTypes.bool,
   onDecrement: PropTypes.func,
@@ -127,7 +133,6 @@ Bag.propTypes = {
 
 Bag.defaultProps = {
   data: [],
-  total: 'R$ 0,00',
   searchValue: '',
   isSearch: false,
   onDecrement: () => null,
