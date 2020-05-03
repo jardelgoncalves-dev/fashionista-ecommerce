@@ -92,7 +92,9 @@ class MyApp extends App {
             isSearch={this.state.typeModal === 'search'}
             onSearch={this.onSearch}
             toProductPage={this.goToProductPage}
-            data={this.state.productsSearch}
+            data={
+              this.state.typeModal === 'cart' ? cart : this.state.productsSearch
+            }
           />
         </Drawer>
       </Provider>
