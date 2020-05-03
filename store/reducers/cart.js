@@ -5,12 +5,16 @@ import {
   ADD_PRODUCT_TO_CART,
   REMOVE_PRODUCT_TO_CART,
   UPDATE_AMOUNT_PRODUCT,
+  GET_PRODUCTS_TO_CART_SUCCESS,
 } from '../types';
 
 export default (state = [], action) => {
   switch (action.type) {
     case GET_PRODUCTS_TO_CART:
       return state;
+
+    case GET_PRODUCTS_TO_CART_SUCCESS:
+      return action.products;
 
     case ADD_PRODUCT_TO_CART:
       return produce(state, (draft) => {
