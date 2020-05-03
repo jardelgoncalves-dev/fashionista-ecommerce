@@ -10,9 +10,9 @@ const Bag = ({
   total = 'R$ 0,00',
   isSearch,
   searchValue,
-  onMinusProduct,
-  onPlusProduct,
-  onRemoveProduct,
+  onDecrement,
+  onIncrement,
+  onRemoveToCart,
   onSearch,
   toProductPage,
 }) => {
@@ -50,7 +50,7 @@ const Bag = ({
                     <button
                       type="button"
                       className="bag__remove"
-                      onClick={() => onRemoveProduct(prod)}
+                      onClick={() => onRemoveToCart(prod)}
                     >
                       Excluir item
                     </button>
@@ -59,14 +59,11 @@ const Bag = ({
                     <h3>{prod.name}</h3>
                     <span>Tam.: {prod.size}</span>
                     <div className="bag__counter">
-                      <button
-                        type="button"
-                        onClick={() => onMinusProduct(prod)}
-                      >
+                      <button type="button" onClick={() => onDecrement(prod)}>
                         <FiMinus />
                       </button>
                       <h1>{prod.amount}</h1>
-                      <button type="button" onClick={() => onPlusProduct(prod)}>
+                      <button type="button" onClick={() => onIncrement(prod)}>
                         <FiPlus />
                       </button>
                     </div>
@@ -121,9 +118,9 @@ Bag.propTypes = {
   total: PropTypes.string,
   searchValue: PropTypes.string,
   isSearch: PropTypes.bool,
-  onMinusProduct: PropTypes.func,
-  onPlusProduct: PropTypes.func,
-  onRemoveProduct: PropTypes.func,
+  onDecrement: PropTypes.func,
+  onIncrement: PropTypes.func,
+  onRemoveToCart: PropTypes.func,
   onSearch: PropTypes.func,
   toProductPage: PropTypes.func,
 };
@@ -133,9 +130,9 @@ Bag.defaultProps = {
   total: 'R$ 0,00',
   searchValue: '',
   isSearch: false,
-  onMinusProduct: () => null,
-  onPlusProduct: () => null,
-  onRemoveProduct: () => null,
+  onDecrement: () => null,
+  onIncrement: () => null,
+  onRemoveToCart: () => null,
   onSearch: () => null,
   toProductPage: () => null,
 };
