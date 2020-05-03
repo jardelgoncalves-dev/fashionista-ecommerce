@@ -3,10 +3,13 @@ import { FiPlus, FiMinus, FiShoppingCart } from 'react-icons/fi';
 import { DebounceInput } from 'react-debounce-input';
 import PropTypes from 'prop-types';
 
+import { productNameToId } from '../../../utils';
+
 const Bag = ({
   data = [],
   total = 'R$ 0,00',
   isSearch,
+  searchValue,
   onMinusProduct,
   onPlusProduct,
   onRemoveProduct,
@@ -21,17 +24,23 @@ const Bag = ({
           debounceTimeout={300}
           onChange={onSearch}
           placeholder="Buscar por produto"
+          value={searchValue}
         />
       </div>
       {data.length ? (
         <ul className="bag__list">
           {data.map((prod) => (
-            <li className="bag__list__item" key={prod.name}>
+            <li
+              className="bag__list__item"
+              key={prod.id || productNameToId(`${prod.name} ${prod.color}`)}
+            >
               <div
                 className="bag__item"
                 onClick={() => {
                   if (isSearch) {
-                    toProductPage(prod);
+                    toProductPage(
+                      productNameToId(`${prod.name} ${prod.color}`)
+                    );
                   }
                 }}
               >
@@ -90,15 +99,27 @@ const Bag = ({
 Bag.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.string,
       name: PropTypes.string,
+      color: PropTypes.string,
       image: PropTypes.string,
-      size: PropTypes.string,
+      size: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(
+          PropTypes.shape({
+            available: PropTypes.bool,
+            size: PropTypes.string,
+            sku: PropTypes.string,
+          })
+        ),
+      ]),
       quantity: PropTypes.number,
       actual_price: PropTypes.string,
       installments: PropTypes.string,
     })
   ),
   total: PropTypes.string,
+  searchValue: PropTypes.string,
   isSearch: PropTypes.bool,
   onMinusProduct: PropTypes.func,
   onPlusProduct: PropTypes.func,
@@ -110,6 +131,7 @@ Bag.propTypes = {
 Bag.defaultProps = {
   data: [],
   total: 'R$ 0,00',
+  searchValue: '',
   isSearch: false,
   onMinusProduct: () => null,
   onPlusProduct: () => null,

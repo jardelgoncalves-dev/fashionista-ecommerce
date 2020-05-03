@@ -1,4 +1,5 @@
 import App from 'next/app';
+import Router from 'next/router';
 import React from 'react';
 import { Provider, connect } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
@@ -12,6 +13,8 @@ class MyApp extends App {
   state = {
     typeModal: '',
     modalClassName: '',
+    productsSearch: [],
+    searchText: '',
   };
 
   static async getInitialProps({ Component, ctx }) {
@@ -42,6 +45,25 @@ class MyApp extends App {
     });
   };
 
+  onSearch = (e) => {
+    const { value } = e.target;
+    const { products } = this.props;
+
+    let data = [];
+    if (value) {
+      data = products.data.filter((p) => p.name.includes(value.toUpperCase()));
+    }
+
+    this.setState({
+      productsSearch: data,
+      searchText: value,
+    });
+  };
+
+  goToProductPage = (id) => {
+    Router.push(`/product/${id}`);
+  };
+
   render() {
     const { Component, pageProps, cart } = this.props;
 
@@ -66,7 +88,12 @@ class MyApp extends App {
           }
           onClose={this.onModalClose}
         >
-          <Bag isSearch={this.state.typeModal === 'search'} />
+          <Bag
+            isSearch={this.state.typeModal === 'search'}
+            onSearch={this.onSearch}
+            toProductPage={this.goToProductPage}
+            data={this.state.productsSearch}
+          />
         </Drawer>
       </Provider>
     );
