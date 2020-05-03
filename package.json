@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "immer": "^6.0.3",
     "next": "^9.3.4",
     "next-images": "^1.4.0",
     "next-redux-wrapper": "^6.0.0-rc.7",
