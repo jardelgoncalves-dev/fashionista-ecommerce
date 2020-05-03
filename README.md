@@ -1,5 +1,9 @@
-# Fashionista
-Projeto Final do programa AceleraDev React da Codenation
+<p align="center">
+  <img src="./logo_readme.png" width="200" alt="Logo" >
+</p>
+ <p align="center">
+ Projeto Final do programa AceleraDev React da Codenation
+ </p>
 
 ## Objetivo
 Desenvolver as principais funcionalidades de um e-commerce de moda feminina, o Fashionista, garantindo a melhor experiência possível para os usuários interagirem com os produtos.

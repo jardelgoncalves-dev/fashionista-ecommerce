@@ -18,6 +18,7 @@ const Head = () => (
     />
     <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/css/main.css" />
+    <link rel="shortcut icon" href="/static/images/favicon.ico" />
   </NextHead>
 );
 
