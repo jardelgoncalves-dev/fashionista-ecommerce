@@ -1,11 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Link from 'next/link';
 import { FiShoppingBag, FiHome, FiSearch } from 'react-icons/fi';
 import PropTypes from 'prop-types';
 
 import logo from '../../../public/static/images/fashionista_logo.png';
 
-const Header = ({ homePath, onSearch, onShoppingCart, productInCart }) => {
+const Header = ({ homePath, onSearch, onShoppingCart, cartSize }) => {
   return (
     <header className="header">
       <Link href="/">
@@ -31,9 +32,7 @@ const Header = ({ homePath, onSearch, onShoppingCart, productInCart }) => {
         <li>
           <button type="button" onClick={onShoppingCart}>
             <FiShoppingBag />
-            {Boolean(productInCart) && (
-              <div className="badges">{productInCart}</div>
-            )}
+            <div className="badges">{cartSize}</div>
           </button>
         </li>
       </ul>
@@ -45,14 +44,16 @@ Header.propTypes = {
   homePath: PropTypes.string,
   onSearch: PropTypes.func,
   onShoppingCart: PropTypes.func,
-  productInCart: PropTypes.number,
+  cartSize: PropTypes.number,
 };
 
 Header.defaultProps = {
   homePath: '/',
   onSearch: () => null,
   onShoppingCart: () => null,
-  productInCart: 0,
+  cartSize: 0,
 };
 
-export default Header;
+export default connect((state) => ({
+  cartSize: state.cart.reduce((acc, prod) => prod.amount + acc, 0),
+}))(Header);
