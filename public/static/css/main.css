@@ -579,9 +579,10 @@ h6 {
   top: 0;
   display: flex;
   justify-content: flex-end;
-  background: radial-gradient(ellipse at center,#7a7a7a 0,#212429 100%);
+  background: radial-gradient(ellipse at center,#7a7a7abf 0,#212429 100%);
   transform: translateX(100%);
   -webkit-transform: translateX(100%);
+  z-index: 99999;
 }
 
 .drawer__side {
