@@ -59,6 +59,7 @@ const ProductPage = ({ products, requestGetProducts, addProductToCart }) => {
 
     setState((old) => ({
       ...old,
+      sizeError: '',
       loading: true,
     }));
 
