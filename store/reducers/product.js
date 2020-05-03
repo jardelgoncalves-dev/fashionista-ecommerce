@@ -5,7 +5,7 @@ import {
 } from '../types';
 
 const INITIAL_STATE = {
-  products: [],
+  data: [],
   loading: true,
   error: false,
   text_error: '',
