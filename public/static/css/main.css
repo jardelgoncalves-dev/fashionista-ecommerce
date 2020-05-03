@@ -328,7 +328,14 @@ h6 {
 }
 
 .product__details .details__price {
+  font-size: 14px;
+}
+
+.product__details .details__price--old {
   font-size: 12px;
+  color: #7a7a7a;
+  text-decoration: line-through;
+  margin-right: 6px;
 }
 
 @media only screen and (min-width: 600px) {
@@ -505,10 +512,17 @@ h6 {
   align-items: center;
 }
 
+.product .product__info .info__price--old,
 .product .product__info .info__price {
   font-size: 16px;
   font-weight: 600;
   color: #212429;
+}
+
+.product .product__info .info__price--old {
+  color: #7a7a7a;
+  text-decoration: line-through;
+  margin-right: 8px;
 }
 
 .product .product__info .info__installments {

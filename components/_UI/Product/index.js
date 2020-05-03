@@ -9,6 +9,8 @@ const Product = ({
   color,
   image,
   actual_price,
+  on_sale,
+  regular_price,
   discount_percentage,
   installments,
   sizes = [],
@@ -34,7 +36,12 @@ const Product = ({
       <div className="product__info">
         <h3 className="product__info__name">{name}</h3>
         <div className="price__container">
-          <span className="info__price">{actual_price}</span>
+          <div>
+            {on_sale && (
+              <span className="info__price--old">{regular_price}</span>
+            )}
+            <span className="info__price">{actual_price}</span>
+          </div>
           {Boolean(installments) && (
             <span className="info__installments">em até {installments}</span>
           )}
@@ -71,6 +78,8 @@ Product.propTypes = {
   actual_price: PropTypes.string,
   discount_percentage: PropTypes.string,
   installments: PropTypes.string,
+  on_sale: PropTypes.bool,
+  regular_price: PropTypes.string,
   sizes: PropTypes.arrayOf(
     PropTypes.shape({
       available: PropTypes.bool,
@@ -89,9 +98,11 @@ Product.defaultProps = {
   name: '',
   color: '',
   actual_price: '',
+  regular_price: '',
   discount_percentage: '',
   installments: '',
   sizes: [],
+  on_sale: false,
   loading: false,
   onSelectSize: () => null,
   addToCart: () => null,

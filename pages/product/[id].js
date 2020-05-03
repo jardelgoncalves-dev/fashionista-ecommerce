@@ -27,9 +27,9 @@ const ProductPage = ({ products, requestGetProducts, addProductToCart }) => {
 
   const productFind = useMemo(() => {
     if (id && products.data.length) {
-      const productExists = products.data.find(
-        (p) => productNameToId(`${p.name} ${p.color}`) === id
-      );
+      const productExists = products.data.find((p) => {
+        return productNameToId(`${p.name} ${p.color}`) === id;
+      });
 
       return productExists;
     }
@@ -94,9 +94,11 @@ const ProductPage = ({ products, requestGetProducts, addProductToCart }) => {
       color={productFind.color}
       name={productFind.name}
       actual_price={productFind.actual_price}
+      regular_price={productFind.regular_price}
       sizes={productFind.sizes}
       discount_percentage={productFind.discount_percentage}
       installments={productFind.installments}
+      on_sale={productFind.on_sale}
       addToCart={addToCart}
       onSelectSize={onSizeChange}
       error={state.sizeError}

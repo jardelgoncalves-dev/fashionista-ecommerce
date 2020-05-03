@@ -41,9 +41,16 @@ const Products = ({ data = [] }) => {
 
                   <div className="product__details">
                     <h4 className="details__name">{product.name}</h4>
-                    <span className="details__price">
-                      {product.actual_price}
-                    </span>
+                    <div>
+                      {product.on_sale && (
+                        <span className="details__price--old">
+                          {product.regular_price}
+                        </span>
+                      )}
+                      <span className="details__price">
+                        {product.actual_price}
+                      </span>
+                    </div>
                   </div>
                 </a>
               </Link>
@@ -61,6 +68,7 @@ Products.propTypes = {
       color: PropTypes.string,
       on_sale: PropTypes.bool,
       actual_price: PropTypes.string,
+      regular_price: PropTypes.string,
       discount_percentage: PropTypes.string,
       image: PropTypes.string,
     })
