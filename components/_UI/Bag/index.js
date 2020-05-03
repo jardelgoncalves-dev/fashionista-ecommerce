@@ -65,7 +65,7 @@ const Bag = ({
                       >
                         <FiMinus />
                       </button>
-                      <h1>{prod.quantity}</h1>
+                      <h1>{prod.amount}</h1>
                       <button type="button" onClick={() => onPlusProduct(prod)}>
                         <FiPlus />
                       </button>
@@ -113,7 +113,7 @@ Bag.propTypes = {
           })
         ),
       ]),
-      quantity: PropTypes.number,
+      amount: PropTypes.number,
       actual_price: PropTypes.string,
       installments: PropTypes.string,
     })
