@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
 import { Product } from '../../components/_UI';
+import { SEO } from '../../components/Page';
 
 import { productNameToId } from '../../utils';
 
@@ -89,21 +90,29 @@ const ProductPage = ({ products, requestGetProducts, addProductToCart }) => {
   };
 
   return productFind ? (
-    <Product
-      image={productFind.image}
-      color={productFind.color}
-      name={productFind.name}
-      actual_price={productFind.actual_price}
-      regular_price={productFind.regular_price}
-      sizes={productFind.sizes}
-      discount_percentage={productFind.discount_percentage}
-      installments={productFind.installments}
-      on_sale={productFind.on_sale}
-      addToCart={addToCart}
-      onSelectSize={onSizeChange}
-      error={state.sizeError}
-      loading={state.loading}
-    />
+    <>
+      <SEO
+        title="Fashionista"
+        subTitle={productFind.name}
+        productName={productFind.name}
+        productImage={productFind.image}
+      />
+      <Product
+        image={productFind.image}
+        color={productFind.color}
+        name={productFind.name}
+        actual_price={productFind.actual_price}
+        regular_price={productFind.regular_price}
+        sizes={productFind.sizes}
+        discount_percentage={productFind.discount_percentage}
+        installments={productFind.installments}
+        on_sale={productFind.on_sale}
+        addToCart={addToCart}
+        onSelectSize={onSizeChange}
+        error={state.sizeError}
+        loading={state.loading}
+      />
+    </>
   ) : null;
 };
 
