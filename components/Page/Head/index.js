@@ -19,6 +19,10 @@ const Head = () => (
     <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/css/main.css" />
     <link rel="shortcut icon" href="/static/images/favicon.ico" />
+    <meta
+      name="google-site-verification"
+      content="cfNDCdoa37lp9Q8amMMKF0z6zjaVyoeRzug_FpzwLts"
+    />
   </NextHead>
 );
 
