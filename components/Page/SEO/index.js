@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 
-const SEO = ({ meta, title, subTitle, productName, productImage }) => (
+const SEO = ({ meta, title, subTitle, productName, productImage, siteUrl }) => (
   <Helmet
     htmlAttributes={{ lang: 'pt' }}
     title={title}
@@ -27,7 +27,7 @@ const SEO = ({ meta, title, subTitle, productName, productImage }) => (
       { property: 'og:type', content: 'website' },
       {
         property: 'og:url',
-        content: 'https://jardelgoncalves-fashionista.netlify.app',
+        content: `https://jardelgoncalves-fashionista.netlify.app/${siteUrl}`,
       },
       {
         property: 'og:image',
@@ -49,6 +49,7 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   productName: PropTypes.string,
   productImage: PropTypes.string,
+  siteUrl: PropTypes.string,
 };
 
 SEO.defaultProps = {
@@ -58,6 +59,7 @@ SEO.defaultProps = {
   productName: '',
   productImage:
     'https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível',
+  siteUrl: '',
 };
 
 export default SEO;

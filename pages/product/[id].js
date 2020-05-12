@@ -96,6 +96,7 @@ const ProductPage = ({ products, requestGetProducts, addProductToCart }) => {
         subTitle={productFind.name}
         productName={productFind.name}
         productImage={productFind.image}
+        siteUrl={`product/${id}`}
       />
       <Product
         image={productFind.image}
