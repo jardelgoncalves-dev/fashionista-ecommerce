@@ -45,7 +45,13 @@ const Bag = ({
               >
                 <div className="bag__item_product">
                   <figcaption>
-                    <img src={prod.image} alt={prod.name} />
+                    <img
+                      src={
+                        prod.image ||
+                        'https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível'
+                      }
+                      alt={prod.name}
+                    />
                     <button
                       type="button"
                       className="bag__remove"
