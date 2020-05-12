@@ -23,7 +23,7 @@ const Product = ({
     <div className="product">
       <figcaption className="product__image">
         {Boolean(discount_percentage) && (
-          <span className="product__promo">{discount_percentage}</span>
+          <span className="product__promo">-{discount_percentage}</span>
         )}
         <img
           src={
