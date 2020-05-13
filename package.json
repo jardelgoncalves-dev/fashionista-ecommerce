@@ -3,7 +3,7 @@
   "author": "Jardel Gonçalves <jardelgoncalves1996@gmail.com>",
   "scripts": {
     "dev": "next",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"

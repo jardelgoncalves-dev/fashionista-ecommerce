@@ -1,99 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      <urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
       xmlns:xhtml="http://www.w3.org/1999/xhtml">
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/index</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/vestido-transpasse-bow-tapeçaria</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/regata-alcinha-folk-preto</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/top-cropped-suede-caramelo</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/bata-decote-fluid-mini-folk</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/t-shirt-leather-dull-marinho</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/camisa-suede-span-burgundy</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/calça-classic-print-free-dots</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/regata-alcinha-folk-off-white</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/macaquinho-alfaiataria-peace-floral-red</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/bolsa-flap-triangle-caramelo</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/vestido-longo-float-tapeçaria</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/bata-decote-fluid-bohemian-preto</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/vestido-franzido-recortes-preto</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/calça-comfort-tassel-paisley-gipsy-azul</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/saia-denim-botões-indigo-escuro</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/blusa-laço-istambul-laranja-queimado</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/blusa-rib-stripes-bege</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/casaco-white-fur-off-white</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/vestido-curto-festival-floral-vintage-vermelho</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/óculos-de-sol-bold-marrrom</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/óculos-de-sol-aviador-vintage-cinza</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-      <url>
-        <loc>https://www.jardelgoncalves-fashionista.netlify.app/product/pulseira-stylish-dourado</loc>
-        <lastmod>2020-05-13</lastmod>
-      </url>
-    </urlset>
+      <url><loc>https://www.jardelgoncalves-fashionista.netlify.app/index</loc>
+                
+                
+                
+                <lastmod>2020-05-13</lastmod>
+                </url><url><loc>https://www.jardelgoncalves-fashionista.netlify.app/product/[id]</loc>
+                
+                
+                
+                <lastmod>2020-05-13</lastmod>
+                </url></urlset>

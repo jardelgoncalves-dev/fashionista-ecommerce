@@ -27,7 +27,7 @@ const SEO = ({ meta, title, subTitle, productName, productImage, siteUrl }) => (
       { property: 'og:type', content: 'website' },
       {
         property: 'og:url',
-        content: `https://jardelgoncalves-fashionista.netlify.app/${siteUrl}`,
+        content: `https://fashionista.now.sh/${siteUrl}`,
       },
       {
         property: 'og:image',
