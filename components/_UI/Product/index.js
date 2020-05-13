@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import { RaisedButton } from '../Button';
 import ListSize from '../ListSize';
@@ -25,7 +26,7 @@ const Product = ({
         {Boolean(discount_percentage) && (
           <span className="product__promo">-{discount_percentage}</span>
         )}
-        <img
+        <LazyLoadImage
           src={
             image ||
             'https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível'

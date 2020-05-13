@@ -2,6 +2,7 @@ import React from 'react';
 import { FiPlus, FiMinus, FiShoppingCart } from 'react-icons/fi';
 import { DebounceInput } from 'react-debounce-input';
 import PropTypes from 'prop-types';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import { productNameToId, BRLPriceToNumber, formatPrice } from '../../../utils';
 
@@ -45,7 +46,7 @@ const Bag = ({
               >
                 <div className="bag__item_product">
                   <figcaption>
-                    <img
+                    <LazyLoadImage
                       src={
                         prod.image ||
                         'https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível'

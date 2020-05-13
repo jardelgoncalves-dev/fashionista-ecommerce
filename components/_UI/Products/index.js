@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import PropTypes from 'prop-types';
 
@@ -29,7 +30,7 @@ const Products = ({ data = [] }) => {
                     </span>
                   )}
                   <figcaption className="product__image">
-                    <img
+                    <LazyLoadImage
                       className="product__image"
                       src={
                         product.image ||
