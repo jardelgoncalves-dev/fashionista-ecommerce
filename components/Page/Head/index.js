@@ -18,10 +18,6 @@ const Head = () => (
     />
     <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/css/main.min.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="shortcut icon" href="/static/images/favicon.ico" />
     <meta
       name="google-site-verification"
