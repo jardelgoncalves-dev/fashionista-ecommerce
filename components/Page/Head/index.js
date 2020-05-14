@@ -17,7 +17,7 @@ const Head = () => (
       content="E-commerce, ecommerce, moda, moda feminina, acessórios, acessorios, mobile"
     />
     <link rel="stylesheet" href="/static/css/normalize.css" />
-    <link rel="stylesheet" href="/static/css/main.css" />
+    <link rel="stylesheet" href="/static/css/main.min.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap"
       rel="stylesheet"
