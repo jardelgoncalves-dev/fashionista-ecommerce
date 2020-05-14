@@ -1,18 +1,6 @@
-@font-face {
-  font-family: "Noto Sans SC Regular";
-  src: url("../font/NotoSansSC-Regular.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "Noto Sans SC Bold";
-  src: url("../font/NotoSansSC-Bold.otf") format("opentype");
-}
-
 :root {
   --light-gray: #F9F9F9;
   --black: #212429;
-  --font-regular: 'Noto Sans SC Regular';
-  --font-bold: 'Noto Sans SC Bold';
 }
 
 * {
@@ -26,7 +14,7 @@ body {
   background-color: var(--light-gray);
   color: var(--black);
   font-size: 10px;
-  font-family: 'Noto Sans SC Regular';
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 input,
@@ -43,8 +31,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Noto Sans SC Regular';
-
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 ::placeholder {
@@ -129,7 +116,7 @@ h6 {
   padding: 2px 2px;
   background-color: #f24949;
   color: #fff;
-  font-family: 'Noto Sans SC Bold';
+  font-weight: bold;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -334,10 +321,10 @@ h6 {
 }
 
 .product__details .details__name {
-  font-size: 13px;
+  font-size: 14px;
   padding: 0;
   margin: 6px 0;
-  font-family: 'Noto Sans SC Bold';
+  font-weight: bold;
 }
 
 .product__details .details__price {
@@ -462,8 +449,8 @@ h6 {
 }
 
 .size__list__item .item span {
-  font-size: 16px;
-  font-family: 'Noto Sans SC Bold';
+  font-size: 17px;
+  font-weight: bold;
   color: #212429;
 }
 
@@ -514,9 +501,9 @@ h6 {
 }
 
 .product .product__info .product__info__name {
-  font-size: 20px;
+  font-size: 21px;
   text-transform: uppercase;
-  font-family: 'Noto Sans SC Bold';
+  font-weight: bold;
   color: #212429;
 }
 
@@ -527,8 +514,8 @@ h6 {
 
 .product .product__info .info__price--old,
 .product .product__info .info__price {
-  font-size: 16px;
-  font-family: 'Noto Sans SC Bold';
+  font-size: 17px;
+  font-weight: bold;
   color: #212429;
 }
 
@@ -539,9 +526,9 @@ h6 {
 }
 
 .product .product__info .info__installments {
-  font-size: 15px;
+  font-size: 17px;
   color: #a7a7a7;
-  font-family: 'Noto Sans SC Bold';
+  font-weight: bold;
   margin-left: 6px;
 }
 
@@ -554,7 +541,7 @@ h6 {
 .size__container .size__title {
   font-size: 14px;
   color: #a7a7a7;
-  font-family: 'Noto Sans SC Regular';
+  font-weight: normal
 }
 
 .size__container .size__error {
@@ -653,8 +640,8 @@ h6 {
 }
 
 .drawer__header .drawer__header__title {
-  font-size: 15px;
-  font-family: 'Noto Sans SC Bold';
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .drawer__header .drawer__header__arrow svg {
@@ -733,8 +720,8 @@ h6 {
   border: 1px solid #7a7a7a;
   width: 100%;
   padding: 0 8px;
-  font-family: 'Noto Sans SC Bold';
-  font-size: 14px;
+  font-weight: bold;
+  font-size: 15px;
 }
 
 .bag .bag__total__amount {
@@ -747,8 +734,8 @@ h6 {
   align-items: center;
   color: #fff;
   padding: 0 16px;
-  font-size: 15px;
-  font-family: 'Noto Sans SC Bold';
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .bag__empty,
@@ -858,8 +845,8 @@ h6 {
   border: 1px solid #212429;
   background-color: transparent;
   color: #212429;
-  font-size: 20px;
-  font-family: 'Noto Sans SC Bold';
+  font-size: 21px;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -868,7 +855,7 @@ h6 {
 
 .bag__counter h1 {
   font-size: 17px;
-  font-family: 'Noto Sans SC Regular';
+  font-weight: normal;
   color: #212429;
 }
 
@@ -892,8 +879,8 @@ h6 {
 
 .bag__item .bag__item__price h3,
 .bag__item_product .bag__item__col h3 {
-  font-size: 13px;
-  font-family: 'Noto Sans SC Bold';
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .bag__item_product .bag__item__col h3 {
@@ -903,7 +890,7 @@ h6 {
 .bag__item .bag__item__price h4,
 .bag__item_product .bag__item__col span {
   font-size: 13px;
-  font-family: 'Noto Sans SC Regular';
+  font-weight: normal;
   color: #a7a7a7;
 }
 
